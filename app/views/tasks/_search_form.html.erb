@@ -1,0 +1,10 @@
+<%= form_for(@task, method: :get, url: tasks_path, remote: true) do |f| %>
+  <td><%= f.text_field :title %></td>
+  <td><%= f.text_field :owner %></td>
+  <td><%= f.text_field :tags %></td>
+  <td><%= f.text_field :description %></td>
+  <td><%= f.text_field :completed_at, type: :date %></td>
+  <td><%= f.submit "Search" %></td>
+  <td></td>
+  <td></td>
+<% end %>

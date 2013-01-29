@@ -1,0 +1,21 @@
+<h1>Support Tasks</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Owner</th>
+      <th>Tags</th>
+      <th>Description</th>
+      <th>Completed at</th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr id="search_form">
+      <%= render partial: 'search_form' %>
+    </tr>
+  </thead>
+  <tbody>
+      <%= render @tasks %>
+  </tbody>
+</table>
+<%= link_to 'New Task', new_task_path, remote: true %>

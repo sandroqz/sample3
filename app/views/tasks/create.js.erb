@@ -1,0 +1,4 @@
+$("tbody").html("<%= j render @tasks %>");
+$(".div_new_task").dialog("close");
+<% @task = Task.new %>
+$("#search_form").html(<% j render partial: "tasks/search_form.html.erb" %>);

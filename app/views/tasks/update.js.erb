@@ -1,0 +1,1 @@
+$("#task<%= @task.id %>").replaceWith("<%= j render file: "tasks/_task.html.erb", locals: {task: @task} %>");
