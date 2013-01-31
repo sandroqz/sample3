@@ -1,4 +1,9 @@
-$("tbody").html("<%= j render @tasks %>");
-$(".div_new_task").dialog("close");
-<% @task = Task.new %>
-$("#search_form").html(<% j render partial: "tasks/search_form.html.erb" %>);
+<% unless @task.errors.empty? %>
+  $(".div_new_task").remove();
+  $("<div/>").attr("title", "New Task").attr("class", "div_new_task").append("<%= j render file: "tasks/new.html.erb", layout: false %>").dialog();
+<% else %>
+  $("tbody").html("<%= j render @tasks %>");
+  $(".div_new_task").dialog("close");
+  <% @task = Task.new %>
+  $("#search_form").html(<% j render partial: "tasks/search_form.html.erb" %>);
+<% end %>
